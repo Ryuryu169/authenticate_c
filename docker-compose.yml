@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "80:80"
+    networks:
+      default:
+        ipv4_address: 192.168.11.80
+networks:
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.11.0/16
